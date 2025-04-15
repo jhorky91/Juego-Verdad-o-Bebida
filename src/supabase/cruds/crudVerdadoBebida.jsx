@@ -25,11 +25,10 @@ export async function InsertarVerdadoBebida(p) {
   }
 }
 
-export async function MostrarVerdadoBebida(p) {
+export async function MostrarVerdadoBebida() {
   const { data } = await supabase
     .from(table)
     .select()
-    .eq("id_usuario", p.id_usuario)
     .order("id", { ascending: true });
   return data;
 }
@@ -53,4 +52,39 @@ export async function EliminarVerdadoBebida(p) {
       position: "center",
     });
   }
+}
+
+export async function EditarVerdadoBebida(p) {
+  const { error } = await supabase
+    .from(table)
+    .update(p)
+    .eq("id", p.id);
+  if (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: error.message,
+      footer: '<a href="">Agregue una nueva descripcion</a>',
+    });
+    return;
+  } else {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Actualizado",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
+}
+
+export async function BuscarPregunta(p) {
+  try {
+    const { data } = await supabase
+      .from("preguntas_verdad_bebida")
+      .select()
+      .ilike("pregunta", "%" + p.pregunta + "%");
+
+    return data;
+  } catch (error) {}
 }

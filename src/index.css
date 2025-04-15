@@ -1,1 +1,132 @@
 @import "tailwindcss";
+
+:root {
+  --rgbafondoanimado: rgba(102, 102, 102, 0.2);
+  --body: #fff;
+  --text: #202020;
+  --body-rgba: 255, 255, 255;
+  --text-rgba: 32, 32, 32;
+  --carousel-color: #9955ff;
+  --font-xs: 0.75em;
+  --font-sm: 0.875em;
+  --font-md: 1em;
+  --font-lg: 1.25em;
+  --font-xl: 2em;
+  --font-xxl: 3em;
+  --font-xxxl: 4em;
+  --font-button: 0.875em;
+  --nav-height: 5rem;
+  --white-bg: #f7b272;
+  --bg: rgb(255, 255, 255);
+  --bg-alpha: #f2f2f2;
+  --bg2: rgb(245, 245, 245);
+  --bg3: #fff;
+  --primary: rgb(52, 131, 235);
+  --bg4: #eaeaea;
+  --bg5: #f76f3a;
+  --bgtotal: #edf3fb;
+  --bgtgderecha: #eeeeee;
+  --color-toggle: #f9743b;
+  --translate-toggle: -12px;
+
+  --logo-rotate: 360deg;
+  --slider-offset: 0.3em;
+  --icon-size: 1.4em;
+  --color-subtitle: #2c2c2c;
+  --color-scroll: #cac9ca;
+  --bg-cards: #ffffff;
+  --title-card-color: #363637;
+  --subtitle-card-color: #080808;
+}
+
+.dark {
+  --rgbafondoanimado: rgba(198, 198, 198, 0.2);
+  --body: #202020;
+  --text: #fff;
+  --body-rgba: 32, 32, 32;
+  --text-rgba: 255, 255, 255;
+  --carousel-color: #9955ff;
+  --font-xs: 0.75em;
+  --font-sm: 0.875em;
+  --font-md: 1em;
+  --font-lg: 1.25em;
+  --font-xl: 2em;
+  --font-xxl: 3em;
+  --font-xxxl: 4em;
+  --font-button: 0.875em;
+  --nav-height: 5rem;
+  --white-bg: #f59674;
+  --bg: #272727;
+  --bg-alpha: rgba(0, 0, 0, 0.3);
+  --bg2: rgb(30, 30, 30);
+  --bg3: #2c2c2e;
+  --primary: rgb(52, 131, 235);
+  --bg4: #4e4e50;
+  --bg5: #f76f3a;
+  --bgtotal: #000;
+  --bgtgderecha: #21252b;
+  --color-toggle: rgb(52, 131, 235);
+  --translate-toggle: 26px;
+
+  --logo-rotate: -360deg;
+  --slider-offset: 0.3em;
+  --icon-size: 1.4em;
+  --color-subtitle: #b7b7b7;
+  --color-scroll: #434343;
+  --bg-cards: #171717;
+  --title-card-color: #8c9298;
+  --subtitle-card-color: #f0f0f0;
+}
+
+body {
+  background-color: var(--bgtotal);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-body-wave {
+  animation: wave-animation 2s infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float2 {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+.animate-float2 {
+  animation: float2 3s ease-in-out infinite;
+}

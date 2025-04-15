@@ -1,10 +1,13 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { AuthContextProvider } from "./context/authContext";
+import { MyRoutes } from "./routes/router";
 
 function App() {
   return (
-    <div className="bg-gray-900 h-screen text-white">
-      Hola Mundo <Icon icon="fluent-emoji:avocado" />
-    </div>
+    <AuthContextProvider>
+      <MyRoutes />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </AuthContextProvider>
   );
 }
 

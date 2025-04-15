@@ -34,9 +34,8 @@ export const AuthContextProvider = ({ children }) => {
       const pUser = {
         id_auth_supabase: p.id,
         nombres: p.user_metadata.full_name,
-        //user: p.user_metadata.username,
         correo: p.email,
-        foto_url: p.user_metadata.avatar_url,
+        foto_url: p.user_metadata.picture,
       };
       await InsertarUsuario(pUser);
     }
